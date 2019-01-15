@@ -1,0 +1,63 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <img class="logo" src="./assets/logo.jpeg" />
+      {{title}}
+    </span>
+    <span style="flex: 1 1 auto;"></span>
+    <span>Powered by lovemyproduct.biz</span>
+   </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="content">
+  <div style="text-align: left; padding-bottom: 24px;">
+    <div class="mat-title">Hi {{firstName}}</div>
+    <div class="mat-body-1">{{description}}</div>
+  </div>
+  
+  <!-- content when no decision is made -->
+  <div *ngIf="!preNo && !preYes && !isYes && !isNo" class="column">
+    <div *ngIf="!preNo " class="area">
+      <div class="mat-headline">Yes please, send me a sample...</div>
+      <div class="mat-body margin-below">
+      We'd love you to have a sample, click below.
+      </div>
+      <button  class="margin-above" mat-raised-button [disabled]= "!campaign" (click)="accept()" color="primary">Yes, please send sample</button>
+    </div>
+    <div *ngIf="!preYes && !isYes && !isNo" class="area">
+      <div class="mat-headline">Not this time...</div>
+      <div class="mat-body margin-below">If you don't want a sample this time click below</div>
+      <button mat-raised-button [disabled]= "!campaign" (click)="no()" color="primary">Not this time...</button>
+    </div>
+  </div>
+
+  <!-- content if a pre-decision has been made -->
+  <div *ngIf="preYes && !isYes && !isNo" class="area">
+    <div class="mat-headline">Yes please, send me a sample...</div>
+      <div class="mat-body margin-below" *ngIf="haveDetails">
+      Please check your delivery details below and we'll send you a sample
+      </div>
+      <div class="mat-body" *ngIf="!haveDetails">
+      We dont know where to send the sample.  Please enter your delivery details below
+      </div>
+      <app-address #address class="margin-below"></app-address>
+      <button  class="margin-above" mat-raised-button [disabled]= "!campaign" (click)="yes()" color="primary">Yes, please send sample</button>
+  </div>
+  
+  <!-- content when the final decision is made -->
+  <div *ngIf="isYes" class="mat-title area">Thank you for your interest and we look forward to sending you a sample</div>
+  <div *ngIf="isNo || preNo" class="mat-title area">
+    <div>Thanks, we wont send you a sample</div>
+    <div><button mat-raised-button (click)="reset()" color="primary">I want to change my mind...</button></div>
+  </div>
+   
+<div *ngIf="!isNo" class="caption gdpr mat-small">
+This statement is to let you know what personal information we will be keeping and how we will be using it. 
+We are telling you this information in accordance with the current GDPR regulations.
+By providing the information above you agree for this information to be used for product sampling activities.
+We will retain the contact information you have provided or which we have obtained from an approved third party in order to manage 
+product sampling activities. Your information will be held for up to a year after the last time it is used.  After this period we will send you a request to
+hold your information for a longer period or a notice that we are removing it from our records. You may view the data we are holding on you at any time (right to access) or request that we remove your 
+information at any time (right to be forgotten) by logging into this web site and selecting these options from the menu.
+</div>
+</div>

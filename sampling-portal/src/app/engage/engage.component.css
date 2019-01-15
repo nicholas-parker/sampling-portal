@@ -1,0 +1,52 @@
+.content {
+	padding-top: 24px;
+	padding-left: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+
+.column {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+	padding-top: 24px;
+}
+
+.area {
+	border: 1px solid grey;
+	border-radius: 12px;
+	padding: 24px;
+}
+
+.col-left {
+	flex-direction: column;
+	align-items: center;
+	padding-right: 48px;
+	border: 1px solid red;
+}
+
+.col-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border: 1px solid red;
+}
+
+.margin-below {
+	margin-bottom: 24px;
+}
+
+.margin-above {
+	margin-top: 24px;
+}
+
+.gdpr {
+	text-align: left;
+	justify-content: flex-start;
+	align-content: flex-start;
+	padding-top: 48px;
+}

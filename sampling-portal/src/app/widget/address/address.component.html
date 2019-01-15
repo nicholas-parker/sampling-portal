@@ -1,0 +1,30 @@
+<form [formGroup]="addressForm" class="container">
+	<mat-form-field class="field"> 
+	  <input matInput placeholder="Recipients name" formControlName="recipient">
+	  <mat-hint>Required, minimum length 2 characters</mat-hint>
+	  <mat-error>This filed is must be completed and must be at least 2 characters long</mat-error>
+    </mat-form-field>
+	<mat-form-field class="field">
+	  <input matInput placeholder="Publication/Blog" formControlName="address1">
+	  <mat-hint>Enter the name of your publication, log or wherever you provide content</mat-hint>
+	  <mat-error>This field must be completed</mat-error>
+	</mat-form-field>
+	<mat-form-field class="field">
+	  <input matInput placeholder="Address" formControlName="address2">
+	  <mat-error>This field must be completed</mat-error>
+	</mat-form-field>
+	<mat-form-field> <input matInput
+		placeholder="Address" formControlName="address3"> </mat-form-field>
+	<mat-form-field> <input matInput
+		placeholder="Address" formControlName="address4"> </mat-form-field>
+	<mat-form-field> <input matInput
+		placeholder="Address" formControlName="address5"> </mat-form-field>
+	<mat-form-field class="field">
+	  <input matInput placeholder="Post code" formControlName="postCode">
+	  <mat-error>This field must be completed, a post code in the UK is at least 6 characters long</mat-error>
+	</mat-form-field>
+	<mat-form-field>
+	  <input matInput placeholder="Delivery notes" formControlName="deliveryNotes">
+	  <mat-hint>Tell us if there is anything you want us to do on delivery, such as where to leave the package or let the receiptionist be aware</mat-hint>
+	</mat-form-field>
+</form>

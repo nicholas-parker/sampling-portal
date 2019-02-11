@@ -10,13 +10,13 @@
 </mat-toolbar>
 
 <div class="content">
-  <div style="text-align: left; padding-bottom: 24px;">
-    <div class="mat-title">Hi {{firstName}}</div>
-    <div class="mat-body-1">{{description}}</div>
-  </div>
   
   <!-- content when no decision is made -->
   <div *ngIf="!preNo && !preYes && !isYes && !isNo" class="column">
+    <div style="text-align: left; padding-bottom: 24px;">
+      <div class="mat-title">Hi {{firstName}}</div>
+      <div class="mat-body-1">{{description}}</div>
+    </div>
     <div *ngIf="!preNo " class="area">
       <div class="mat-headline">Yes please, send me a sample...</div>
       <div class="mat-body margin-below">

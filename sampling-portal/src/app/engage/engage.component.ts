@@ -131,7 +131,7 @@ export class EngageComponent implements OnInit {
         this.firstName = this.campaign.tribe[0].member.name.split(' ')[0];
         this.description = this.campaign.promotionDescription;
         this.title = this.campaign.promotionTitle;
-        
+
         /**
          * populate form with TribeChannel for post
          */

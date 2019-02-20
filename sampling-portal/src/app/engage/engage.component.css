@@ -1,13 +1,42 @@
+/**
+ * styles which are responsive
+ */
+@media only screen and (max-width: 600px) {
 .content {
 	padding-top: 24px;
-	padding-left: 24px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
+	align-items: flex-end;
 }
 
+.gdpr {
+	margin-top: 24px;
+}
+}
+
+@media not screen and (max-width: 600px) {
+.content {
+	padding-top: 24px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.gdpr {
+	width: 40%;
+	margin-left: 24px;
+}
+}
+
+/**
+ * static styles
+ */
+ .response {
+   flex-grow: 2;
+ }
+ 
 .column {
 	display: flex;
 	flex-direction: row;
@@ -44,9 +73,9 @@
 	margin-top: 24px;
 }
 
-.gdpr {
+.gdpr-base {
 	text-align: left;
 	justify-content: flex-start;
 	align-content: flex-start;
-	padding-top: 48px;
 }
+

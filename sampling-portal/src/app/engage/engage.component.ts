@@ -35,6 +35,11 @@ export class EngageComponent implements OnInit {
   public isNo = false;
   public isYes = false;
 
+  /**
+   * reactive css
+   */
+  public classContent: string;
+  
   private _addressForm;
   @ViewChild(AddressComponent) set address(addressComponent: any) {
     if (addressComponent === undefined) { return; }
@@ -104,21 +109,25 @@ export class EngageComponent implements OnInit {
             return of(true);
           }
         }),
-        flatMap(loginStatus => {
+        flatMap((loginStatus: boolean) => {
           this.validInvitation = loginStatus;
           if (!loginStatus) {
             return EMPTY;
+          } else {
+            return of(true);
           }
+        }),
+        flatMap((b: boolean) => {
           if (this.preYes === true) {
             return this.campaignService.setInvitationYes(data[0], data[1], data[2]);
           }
           if (this.preNo === true) {
             return this.campaignService.setInvitationNo(data[0], data[1], data[2]);
           }
-          return of(true);
+          return of(new ActionResponse());
         }),
-        flatMap((next: any) => {
-          return this.campaignService.getCampaingForTribeInvitation(data[0], data[1], data[2]);
+        flatMap((next: ActionResponse) => {
+           return this.campaignService.getCampaingForTribeInvitation(data[0], data[1], data[2]);
         }),
         catchError( err => {
           console.log(err);

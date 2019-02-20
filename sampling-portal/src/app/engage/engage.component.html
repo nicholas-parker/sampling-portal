@@ -1,16 +1,16 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>
-      <img class="logo" src="./assets/logo.jpeg" />
+      <!-- img class="logo" src="./assets/logo.jpeg" / -->
       {{title}}
     </span>
     <span style="flex: 1 1 auto;"></span>
-    <span>Powered by lovemyproduct.biz</span>
+    <span class="">Powered by lovemyproduct.biz</span>
    </mat-toolbar-row>
 </mat-toolbar>
 
 <div class="content">
-  
+<div>  
   <!-- content when no decision is made -->
   <div *ngIf="!preNo && !preYes && !isYes && !isNo" class="column">
     <div style="text-align: left; padding-bottom: 24px;">
@@ -50,8 +50,9 @@
     <div>Thanks, we wont send you a sample</div>
     <div><button mat-raised-button (click)="reset()" color="primary">I want to change my mind...</button></div>
   </div>
-   
-<div *ngIf="!isNo" class="caption gdpr mat-small">
+</div>   
+<div *ngIf="!isNo" class="caption gdpr-base gdpr mat-small">
+<div class="mat-body-strong">How we use and keep your data</div>
 This statement is to let you know what personal information we will be keeping and how we will be using it. 
 We are telling you this information in accordance with the current GDPR regulations.
 By providing the information above you agree for this information to be used for product sampling activities.
